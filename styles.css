@@ -1,0 +1,67 @@
+.botao{
+    padding: 15px 30px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+body {
+    background-color: #2a3b3a;
+}
+
+.box {
+    height: 100px;
+    width: 100px;
+    border-radius: 5%;
+}
+
+.box1 {
+    background-color: red;
+}
+
+.box2 {
+    background-color: yellow;
+}
+
+.box3 {
+    background-color: green;
+}
+
+.box4 {
+    background-color: purple;
+}
+
+.titulo-box {
+    font-size: 54px;
+    font-weight: bold;
+    color: #e6d1b7;
+    
+}
+
+.about {
+    height: 100vh;
+    width: 100%;
+}
+
+.hero {
+    height: 100vh;
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+  .quote {
+    margin-top: 0px;
+    //font-size: clamp(2rem, 6rem, 7vw);
+    font-size: 72px;
+    
+    text-align: center;
+    overflow: hidden;
+    color: #dfdcff;
+  }
+
