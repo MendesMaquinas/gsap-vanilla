@@ -65,3 +65,40 @@ body {
     color: #dfdcff;
   }
 
+  h2 {
+    margin: 0;
+    padding: 0;
+  }
+  
+  h2 {
+    padding-bottom: 20px;
+    background-image: linear-gradient(157deg, #e8dfff, #4873ea);
+    font-size: 130px;
+    line-height: 0.8;
+    letter-spacing: -6px;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+
+  .anim-typewriter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    font-size: 3rem;
+    color: #fff5f5;
+    font-weight: bold;
+    
+  }
+
+  .a {
+    display: flex;
+    letter-spacing: 20px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

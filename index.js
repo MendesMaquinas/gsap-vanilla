@@ -1,37 +1,4 @@
-gsap.registerEffect({
-  name: "fade",
-  defaults: { duration: 2 },
-  effect: (targets, config) => {
-    return gsap.to(targets, { duration: config.duration, opacity: 0 });
-  },
-});
 
-document.querySelectorAll(".box").forEach(function (box) {
-  box.addEventListener("mouseenter", function () {
-    gsap.effects.fade(this);
-  });
-});
-
-let tl = gsap.timeline();
-
-tl.from(".box1", {
-  opacity: 0,
-})
-  .to(".box1", {
-    x: 115,
-    y: -100,
-    duration: 2,
-    opacity: 0.4,
-    ease: "elastic",
-  })
-  .to(
-    ".box2",
-    {
-      x: -105,
-      duration: 3,
-    },
-    "-=2"
-  );
 
 let letterElement = document.getElementsByClassName("letter");
 
@@ -44,34 +11,6 @@ gsap.from(letterElement, {
 
 gsap.registerPlugin(ScrollTrigger);
 
-gsap.to(".letter", {
-  scale: 10, // Expande as letras
-  opacity: 0, // Faz as letras sumirem
-  stagger: 0.5, // Aplica um pequeno atraso entre as animações das letras
-  scrollTrigger: {
-    trigger: ".titulo-box",
-    start: "top center",
-    end: "top 100px",
-    scrub: true,
-  },
-});
-
-const tln = gsap.timeline({});
-gsap.utils.toArray(".letter").forEach((img) => {
-  gsap.fromTo(
-    img,
-    { opacity: 0 },
-    {
-      opacity: 1,
-      duration: 1, // Tempo da animação
-      delay: Math.random() * 2, // Atraso aleatório entre 0 e 2 segundos
-      ease: "power2.out",
-      rotate: Math.floor(Math.random() * 360),
-    }
-  );
-});
-
-
 gsap.to(".quote", {
     fontSize: "100px", // Tamanho final
     duration: 1,
@@ -82,3 +21,41 @@ gsap.to(".quote", {
         scrub: true       // Efeito suave ao rolar
     }
 });
+
+const tl = gsap.timeline({
+  defautls: {ease: "none"},
+  scrollTrigger:{
+    trigger: ".animText-section",
+    start: "top center",
+    end: "bottom center",
+    markers: true,
+    scrub: 0.5,
+    pin: true,
+  }
+})
+
+tl.from('h2', {
+  yPercent: -100,
+  stagger: 1
+})
+
+var tls = new TimelineMax({
+  paused:true
+});
+// letter animation
+tls.fromTo(".anim-typewriter", 8, {
+  width: "0",
+}, {
+  width: "30.18em", /* same as CSS .line-1 width */
+  ease:  SteppedEase.config(37)
+}, 0);
+// text cursor animation
+tls.fromTo(".anim-typewriter", 0.5, {
+  "border-right-color": "rgba(255,255,255,0.75)"
+}, {
+  "border-right-color": "rgba(255,255,255,0)",
+  repeat: -1,
+  ease:  SteppedEase.config(37)
+}, 0);
+
+tl.play();
